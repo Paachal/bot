@@ -21,7 +21,7 @@ def home():
 # Generate QR code
 def generate_qr():
     qr = qrcode.QRCode(version=1, box_size=10, border=4)
-    qr.add_data("http://localhost:5000")  # Replace later with public URL
+    qr.add_data("https://girlfriend-qr.onrender.com")  # Replace later with public URL
     qr.make(fit=True)
     img = qr.make_image(fill_color="black", back_color="white")
     
