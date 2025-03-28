@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>For My Patrick and Baby Bear ❤️</title>
+    <style>
+        body { 
+            font-family: 'Arial', sans-serif; 
+            background: #1a001a;  /* Dark purple-black */
+            color: #e6e6e6;  /* Light gray text */
+            text-align: center; 
+            padding: 20px;
+            margin: 0;
+        }
+        h1 { 
+            color: #b366ff;  /* Light purple */
+            text-shadow: 0 0 10px rgba(179, 102, 255, 0.5);
+        }
+        .photo, .video { 
+            max-width: 80%; 
+            border-radius: 15px; 
+            margin: 15px auto;
+            box-shadow: 0 0 15px rgba(179, 102, 255, 0.7);  /* Purple glow */
+            border: 2px solid #4d004d;  /* Deep purple border */
+        }
+        .love-note {
+            font-size: 20px;
+            color: #ff99ff;  /* Pink-purple */
+            margin: 20px auto;
+            padding: 20px;
+            background: rgba(38, 0, 77, 0.7);  /* Semi-transparent dark purple */
+            border-radius: 10px;
+            max-width: 600px;
+            border: 1px solid #b366ff;
+        }
+        h2 {
+            color: #cc99ff;  /* Lavender */
+            margin-top: 30px;
+        }
+        /* Add a subtle animated background */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, transparent 20%, #1a001a 70%);
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+    <h1>To My Patrick and Baby Bear ❤️</h1>
+    
+    <!-- Love Note -->
+    <div class="love-note">
+        {{ love_text }}
+    </div>
+    
+    <!-- Photos -->
+    <h2>No vex if you see the ugly ones😂🤣</h2>
+    {% for photo in photos %}
+        <img class="photo" src="{{ url_for('static', filename=photo) }}" alt="Our Photo">
+    {% endfor %}
+    
+    <!-- Videos -->
+    <h2>Hehehe Your Videos</h2>
+    {% for video in videos %}
+        <video class="video" controls>
+            <source src="{{ url_for('static', filename=video) }}" type="video/mp4">
+        </video>
+    {% endfor %}
+</body>
+</html>
